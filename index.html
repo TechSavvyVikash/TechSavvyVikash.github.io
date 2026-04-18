@@ -3,7 +3,7 @@
 <body>
 
 <script>
-fetch("https://raw.githubusercontent.com/TechSavvyVikash/AF-Link_Control/refs/heads/main/Link.json" + Date.now())
+fetch("https://raw.githubusercontent.com/TechSavvyVikash/AF-Link_Control/main/Link.json" + Date.now())
   .then(res => res.json())
   .then(data => {
     window.location.href = data.magic_button;
