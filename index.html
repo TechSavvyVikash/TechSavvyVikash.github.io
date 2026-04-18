@@ -2,14 +2,18 @@
 <html>
 <body>
 
+<p id="status">Loading...</p>
+
 <script>
-fetch("https://raw.githubusercontent.com/TechSavvyVikash/AF-Link_Control/main/Link.json" + Date.now())
-  .then(res => res.json())
-  .then(data => {
+fetch("https://raw.githubusercontent.com/TechSavvyVikash/AF-Link_Control/main/Link.json?t=" + Date.now())
+  .then(res => res.text())   // 👈 use text instead of json()
+  .then(text => {
+    const data = JSON.parse(text);  // 👈 manually parse
+    document.getElementById("status").innerText = "Redirecting...";
     window.location.href = data.magic_button;
   })
-  .catch(() => {
-    document.body.innerHTML = "Error loading link";
+  .catch(err => {
+    document.getElementById("status").innerText = "ERROR: " + err;
   });
 </script>
 
