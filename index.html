@@ -5,7 +5,7 @@
 <p id="status">Loading...</p>
 
 <script>
-fetch("https://raw.githubusercontent.com/TechSavvyVikash/AF-Link_Control/main/Link.json?t=" + Date.now())
+fetch("https://raw.githubusercontent.com/TechSavvyVikash/AF-Link_Control/main/Link_1.json?t=" + Date.now())
   .then(res => res.text())   // 👈 use text instead of json()
   .then(text => {
     const data = JSON.parse(text);  // 👈 manually parse
